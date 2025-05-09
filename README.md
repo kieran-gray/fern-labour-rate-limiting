@@ -1,2 +1,2 @@
-# fern_labour_package_template
+# fern_labour_rate_limiting
 

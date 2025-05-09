@@ -1,8 +1,10 @@
-from fern_labour_package_template.example import DomainEvent
+from redis import Redis
+
+from fern_labour_rate_limiting.redis_rate_limiter import RedisRateLimiter
 
 
 def can_instantiate_classes() -> None:
-    DomainEvent.create(data={"test": "test"})
+    RedisRateLimiter(redis=Redis(), limit=1, expiry=10)
     print("Can instantiate all classes")
 
 
